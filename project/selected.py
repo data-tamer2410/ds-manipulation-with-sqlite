@@ -10,7 +10,7 @@ def selected() -> str:
     with open(f"{base_dir}/selected.sql", "r", encoding="utf-8") as f:
         sql = f.read()
         list_sql_command = [comm.strip() for comm in sql.split(";")]
-        comments = re.findall(r"--[^.]+\.", sql)
+        comments = re.findall(r"--[^\n]+\n", sql)
     with sqlite3.connect(database) as db:
         cur = db.cursor()
         res = ""
