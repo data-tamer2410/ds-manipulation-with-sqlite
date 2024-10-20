@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ds-sqlite-database-example"
+name = "ds-manipulation-with-sqlite"
 version = "0.1.1"
 description = "Creating a database for a task management system using SQLite."
 authors = ["data-tamer2410 <vitaliy.dayneko2410@gmail.com>"]
