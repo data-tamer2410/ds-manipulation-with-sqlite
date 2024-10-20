@@ -3,6 +3,7 @@ name = "ds-manipulation-with-sqlite"
 version = "0.1.1"
 description = "Creating and manipulation with sqlite database."
 authors = ["data-tamer2410 <vitaliy.dayneko2410@gmail.com>"]
+readme = 'README.md'
 packages = [{include = 'project'}]
 
 [tool.poetry.dependencies]
