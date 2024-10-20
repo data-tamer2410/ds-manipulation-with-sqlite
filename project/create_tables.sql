@@ -1,4 +1,4 @@
---Створення таблиці users
+--Creation of the users table
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -6,14 +6,14 @@ CREATE TABLE users (
 	email VARCHAR(100) UNIQUE NOT NULL
 	);
 
---Створення таблиці status
+--Creation of the status table
 DROP TABLE IF EXISTS status;
 CREATE TABLE status (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	name VARCHAR(30) UNIQUE NOT NULL
 	);
 
---Створення таблиці tasks
+--Creation of the tasks table
 DROP TABLE IF EXISTS tasks;
 CREATE TABLE tasks (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
