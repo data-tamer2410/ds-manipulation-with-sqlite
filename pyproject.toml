@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ds-manipulation-with-sqlite"
 version = "0.1.1"
-description = "Creating a database for a task management system using SQLite."
+description = "Creating and manipulation with sqlite database."
 authors = ["data-tamer2410 <vitaliy.dayneko2410@gmail.com>"]
 packages = [{include = 'project'}]
 
