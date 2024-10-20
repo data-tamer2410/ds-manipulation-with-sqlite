@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "goit-ds-hw-02"
+name = "ds-sqlite-database"
 version = "0.1.1"
-description = ""
+description = "Creating a database for a task management system using SQLite."
 authors = ["data-tamer2410 <vitaliy.dayneko2410@gmail.com>"]
-packages = [{ 'include' = 'project' }]
+packages = [{include = 'project'}]
 
 [tool.poetry.dependencies]
 python = "~3.12"
