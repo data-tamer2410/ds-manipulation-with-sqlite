@@ -1,63 +1,63 @@
--- Увімкнення перевірки зовнішніх ключів.
+--Enable foreign key validation.
 PRAGMA foreign_keys = ON;
 
---Отримати всі завдання певного користувача.
+--Get all tasks of a specific user.
 SELECT * FROM tasks WHERE user_id = 1;
 
---Вибрати завдання за певним статусом.
+--Select a task by a certain status.
 SELECT * FROM tasks
 WHERE status_id = (SELECT id FROM status WHERE name = 'new');
 
---Оновити статус конкретного завдання.
+--Update the status of a specific task.
 UPDATE tasks
 SET status_id = 2
 WHERE id = 1;
 
---Отримати список користувачів, які не мають жодного завдання.
+--Get a list of users who do not have any tasks.
 SELECT * FROM users
 WHERE id NOT IN(SELECT user_id FROM tasks);
 
---Додати нове завдання для конкретного користувача.
+--Add a new task for a specific user.
 INSERT INTO tasks (title,status_id,user_id)
 VALUES ('Finish the project.', 1, 7);
 
---Отримати всі завдання, які ще не завершено.
+--Get all tasks that have not yet been completed.
 SELECT * FROM tasks
 WHERE status_id != 3;
 
---Видалити конкретне завдання.
+--Delete a specific task.
 DELETE FROM tasks WHERE id = 5;
 
---Знайти користувачів з певною електронною поштою.
+--Find users with a specific email.
 SELECT * FROM users WHERE email LIKE 'ivan.ivanov@gmail.com';
 
---Оновити ім'я користувача.
+--Update username.
 UPDATE users
 SET fullname = 'Volodimir Zelenski'
 WHERE id = 10;
 
---Отримати кількість завдань для кожного статусу.
+--Get the number of tasks for each status.
 SELECT COUNT(*) AS count_tasks, status_id
 FROM tasks
 GROUP BY status_id;
 
---Отримати завдання, які призначені користувачам з певною доменною частиною електронної пошти.
+--Get tasks that are assigned to users with a specific email domain part.
 SELECT *
 FROM tasks t
 JOIN users u ON t.status_id = u.id
 WHERE u.email LIKE '%@goit.ua';
 
---Отримати список завдань, що не мають опису.
+--Get a list of tasks that do not have a description.
 SELECT * FROM tasks
 WHERE description IS NULL OR description = '';
 
---Вибрати користувачів та їхні завдання, які є у статусі.
+--Select users and their tasks that are in the status.
 SELECT *
 FROM users u
 JOIN tasks t ON u.id = t.user_id
 WHERE t.status_id = 2;
 
---Отримати користувачів та кількість їхніх завдань.
+--Get users and the number of their tasks.
 SELECT u.*, COUNT(t.id) AS count_tasks
 FROM users u
 LEFT JOIN tasks t ON u.id = t.user_id
